@@ -1,7 +1,9 @@
 using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.SearchService;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -12,16 +14,10 @@ public class Player : MonoBehaviour
     private void Update()
     {
         Vector2 inputVector = gameInput.GetMovementVectorNormalized();
-        Vector3 moveDir = new Vector3(inputVector.x, 0f, 0.0f);
+        Vector3 moveDir = new Vector3(inputVector.x, 0.0f, 1.0f);
 
         float moveDistance = moveSpeed * Time.deltaTime;
         
-        // Collisions
-        // float playerRadius = .7f;
-        // float playerHeight = 2f;
-        // bool canMove = !Physics.CapsuleCast(transform.position, transform.position + Vector3.up * playerHeight, playerRadius, moveDir, moveDistance);
-
-
         transform.position += moveDir * moveDistance;
     }
 }

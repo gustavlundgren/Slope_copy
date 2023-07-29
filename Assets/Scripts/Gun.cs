@@ -6,6 +6,8 @@ public class Gun : MonoBehaviour
 {
     [SerializeField] Bullet bullet;
     [SerializeField] Transform muzzle;
+
+
     private float timer = 0f;
     private float BulletSpawnRate = 0.2f;
 
